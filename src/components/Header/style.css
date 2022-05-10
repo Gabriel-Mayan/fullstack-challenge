@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-between;
+
+  width: 100vw;
+  padding: 5px 0 5px 0;
+
+  overflow: hidden;
+  background-color: #9A2B2B;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo_image {
+  cursor: pointer;
+  max-height: 40px;
+  margin: 0 5px 0 5px;
+  justify-self: flex-start;
+}
+
+.menu {
+  display: flex;
+}
+
+.social-icon {
+  width: 3vw;
+  height: 3vh;
+  cursor: pointer;
+}

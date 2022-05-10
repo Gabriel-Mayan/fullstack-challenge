@@ -1,88 +1,70 @@
-# Desafio para fullstack
+# Getting Started with Create React App
 
-Bem-vindo ao desafio técnico para fullstack  da Ubistart!! :raised_hands:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![](./docs/celebration.gif)
+## Available Scripts
 
-## :man_technologist: &nbsp;O desafio&nbsp; :woman_technologist:
+In the project directory, you can run:
 
-Para a resolução deste desafio, esperamos que você desenvolva uma API Rest e interface de usuário que contemple as estórias de usuário abaixo.
+### `npm start`
 
-* Como um usuário eu quero criar uma conta então poderei gerenciar meus itens de TODO
-  - Dado que estou criando minha conta, quero informar e-mail e senha
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-* Como um usuário eu quero poder entrar na plataforma
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-* Como um usuário eu quero inserir um item de TODO, assim poderei adicionar um TODO a minha lista de tarefas
+### `npm test`
 
-  - A aplicação deve armazenar a data e hora da inserção
-  - Informar descrição e prazo da tarefa
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-* Como um usuário eu quero finalizar um TODO, então poderei colocar a tarefa como feita
+### `npm run build`
 
-  - A aplicação deve armazenar a data e hora de quando a tarefa foi finalizada
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-* Como um usuário eu quero editar um TODO, então poderei atualizar minha lista
- 
-  - A aplicação deve armazenar a data e hora de quando a tarefa foi editada
-  - Posso atualizar descrição e prazo
-  - Um TODO concluído não pode ser atualizado
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-* Como um usuário eu quero listar todos os meus itens de TODO, assim poderei realizá-los
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-  - Eu quero listar apenas os **MEUS** itens
-  - Se o TODO está atrasado, então a aplicação deve retornar que o TODO está atrasado
+### `npm run eject`
 
-* Como um administrador eu quero poder entrar na plataforma
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-  - A aplicação deve fornecer um usuario administrador por padrão
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-* Como um administrador eu quero listar todos os itens de TODO, assim poderei ver todas as tarefas criadas
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-  - A lista deve ser paginada
-  - A lista deve conter o email do usuário, descrição e prazo do TODO
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-* Como um administrador eu quero filtrar a lista de itens de TODO por tarefas atrasadas
+## Learn More
 
-  - A lista deve ser paginada
-  - A lista deve conter o email do usuário, descrição e prazo do TODO
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## :wrench: &nbsp;Requisitos técnicos
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-![](./docs/requisitos.gif)
-### Obrigatórios
+### Code Splitting
 
-* Backend deve ser desenvolvido em Node.JS
-* Desenvolver interface de usuário utilizando React.JS
-* Disponibilizar documentação o suficiente para a execução do projeto no README
-* Tratar erros
-* Autenticação e autorização via JWT
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Opcionais
+### Analyzing the Bundle Size
 
-* Escrever testes de unidade e integração
-* Documentar decisões tomadas durante o desafio técnico
-* Disponibilizar diagrama da API
-* Utilizar docker
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Observação
+### Making a Progressive Web App
 
-Você pode usar qualquer framework de backend e, também, qualquer banco de dados para a resolução do problema.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-(Exemplo de frameworks: Express, AdonisJS, NestJS)
+### Advanced Configuration
 
-## :eyes: &nbsp;Avaliação 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-![](./docs/avaliacao.gif)
+### Deployment
 
-O objetivo principal deste desafio é avaliar as capacidades do candidato em:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-* Uso correto e apropriado das camadas da arquitetura do projeto
-* Escrever código limpo
-* Estruturar e armazenar dados de forma performática
+### `npm run build` fails to minify
 
-
-### Observações
- 
-* Ao terminar o desafio, encaminhe o link do repositório para o email `rh@ubistart.com`
-* Caso você não conclua o desafio no tempo combinado, encaminhe a sua solução para nós com uma seção de `dificuldades` no projeto. O importante é vermos o que você conseguiu construir :v: :grin: 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
