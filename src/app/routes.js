@@ -11,9 +11,9 @@ const AdminPage = React.lazy(async () => import('../pages/AdminPage').then((m) =
 const BaseView = React.lazy(async () => import('../bases/BaseView').then((m) => ({ default: m.BaseView })));
 
 const ProtectedUserRoute = ({ redirectPath = '/login', children }) => {
-	const { userStore: { userData } } = useStores();
+	const { userStore: { user } } = useStores();
 
-	if (!userData || userData.userType === 'admin') {
+	if (!user || user.userType === 'admin') {
 		return <Navigate to={redirectPath} replace />;
 	}
 
@@ -21,9 +21,9 @@ const ProtectedUserRoute = ({ redirectPath = '/login', children }) => {
 }
 
 const ProtectedAdminRoute = ({ redirectPath = '/login', children }) => {
-	const { userStore: { userData } } = useStores();
+	const { userStore: { user } } = useStores();
 
-	if (!userData || userData.userType !== 'admin') {
+	if (!user || user.userType !== 'admin') {
 		return <Navigate to={redirectPath} replace />;
 	}
 

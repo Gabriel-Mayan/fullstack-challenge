@@ -12,7 +12,7 @@ import api from '../../services/api';
 
 export function Login() {
 	const { register, handleSubmit } = useForm();
-	const { userStore: { setUserData, setToken } } = useStores();
+	const { userStore: { setUser, setToken } } = useStores();
 
 	let navigate = useNavigate();
 
@@ -21,12 +21,12 @@ export function Login() {
 			if (response.status !== 200)
 				console.log('Falha ao efetuar o login');
 
-			const { data: { token, user: userData } } = response;
+			const { data: { token, user } } = response;
 
 			setToken(token);
-			setUserData(userData);
+			setUser(user);
 
-			const route = userData.userType === 'admin' ? 'admin' : 'user';
+			const route = user.userType === 'admin' ? 'admin' : 'user';
 			navigate(`/${route}`);
 		}).catch(err => {
 			if (err.request)

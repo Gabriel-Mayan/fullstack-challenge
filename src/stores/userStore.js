@@ -1,19 +1,19 @@
 import { useLocalStorage } from 'react-use';
 
 export function useUser() {
-  const [token, setToken, removeToken] = useLocalStorage('token');
-  const [userData, setUserData, removerUserData] = useLocalStorage('userData');
+	const [token, setToken, removeToken] = useLocalStorage('token');
+	const [user, setUser, removerUser] = useLocalStorage('user');
 
-  function handleClearUserData() {
-    removeToken();
-    removerUserData();
-  }
+	function handleClearUser() {
+		removeToken();
+		removerUser();
+	}
 
-  return {
-    token,
-    setToken,
-    userData,
-    setUserData,
-    handleClearUserData,
-  };
+	return {
+		token,
+		setToken,
+		user,
+		setUser,
+		handleClearUser,
+	};
 }

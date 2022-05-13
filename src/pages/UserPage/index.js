@@ -1,10 +1,11 @@
 import './style.css';
+import { CreateTask } from '../../components/CreateTask';
 
 export function UserPage() {
 
 	return (
-		<div>
-			<p>UserPage</p>
+		<div className='container-user-page'>
+			<CreateTask className='create-task' />
 		</div>
 	);
 }
