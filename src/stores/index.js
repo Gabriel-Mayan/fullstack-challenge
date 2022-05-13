@@ -1,19 +1,19 @@
 /* eslint-disable react/destructuring-assignment */
-import { createContext, useContext } from 'react';
 import { useUser } from './userStore';
+import { createContext, useContext } from 'react';
 
 const storesCtx = createContext(null);
 
 export function useStores() {
-  return useContext(storesCtx);
+	return useContext(storesCtx);
 }
 
 export function StoresProvider(props) {
-  const userStore = useUser();
+	const userStore = useUser();
 
-  return (
-    <storesCtx.Provider value={{ userStore }}>
-      {props.children}
-    </storesCtx.Provider>
-  );
+	return (
+		<storesCtx.Provider value={{ userStore }}>
+			{props.children}
+		</storesCtx.Provider>
+	);
 }

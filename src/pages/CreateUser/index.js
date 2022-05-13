@@ -15,13 +15,14 @@ export function CreateUser() {
 	const onSubmit = ({ email, password, confimPassword, }) => {
 		api.post('/create_user', { email, password, confimPassword, }).then(response => {
 			if (response.status !== 200)
-				return 'Falha ao efetuar o cadastro';
+				console.log('Falha ao efetuar o cadastro');
 
-			navigate.push('/cadastro-ok');
-			//      navigate.push('/login');
+			//TODO colocar uma notificação de sucesso de cadastro
+
+			navigate('/login')
 		}).catch(err => {
 			if (err.request)
-				return ('error', err.request.response);
+				console.log('error', err.request.response);
 		});
 	}
 
