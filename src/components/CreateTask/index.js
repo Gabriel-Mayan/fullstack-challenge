@@ -31,18 +31,18 @@ export function CreateTask() {
 			<h1>Crie aqui sua tarefa: </h1>
 			<form className='form-tarefas' onSubmit={handleSubmit(onSubmit)}>
 				<div className='div-input'>
-					<p>Descrição da Tarefa:</p>
+					<p className='text'>Descrição da Tarefa:</p>
 					<input className='description' type="text" placeholder="O que temos pra hoje?" {...register('description', { required: true })} />
 				</div>
 				<div className='div-input'>
-					<p>Data de conclusão:</p>
+					<p className='text'>Data de conclusão:</p>
 					<input type="date" min={now} {...register('date', { required: true })} />
 				</div>
 				<div className='div-input'>
-					<p>Hora de Conclusão:</p>
+					<p className='text'>Hora de Conclusão:</p>
 					<input type="time" {...register('time', { required: true })} />
 				</div>
-				<Button className='btn-task' type="submit" label='Criar Tarefa' />
+				<Button className='div-input btn-task' type="submit" label='Criar Tarefa' />
 			</form>
 		</div>
 	)

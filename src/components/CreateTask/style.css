@@ -1,6 +1,6 @@
 .conteiner-tarefas {
 	width: 80%;
-	height: 15vh;
+	height: 18%;
 
 	margin-top: 20px;
 	display: flex;
@@ -8,13 +8,14 @@
 	flex-direction: column;
 	justify-content: flex-start;
 
-	padding: 10px;
+	padding: 10px 10px 40px 10px;
 
 	backdrop-filter: blur(3px);
-	background-color: rgb(128, 0, 0, 0.6);
+	background-color: rgba(200, 50, 50, 0.5);
 
 	border-radius: 20px;
 	box-shadow: 0 0 20px black;
+
 }
 
 .form-tarefas {
@@ -27,17 +28,14 @@
 	width: 100%;
 	height: 4vh;
 
-	margin-top: 20px;
+	margin-block: 16px;
 }
 
-input {
-	width: 100%;
-	height: 28px;
-}
-
-p {
-	font-size: 12px;
-	color: rgba(255, 235, 235, 0.651);
+.text {
+	font-size: 14px;
+	font-weight: bold;
+	color: rgba(35, 2, 2, 0.651);
+	margin-bottom: 5px;
 }
 
 .description {
@@ -47,4 +45,5 @@ p {
 .btn-task {
 	font-size: 12px;
 	padding: 15px 20px;
+	color: aliceblue;
 }

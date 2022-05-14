@@ -12,13 +12,12 @@ button {
 
 	cursor: pointer;
 	color: rgb(231, 224, 224);
-	background: linear-gradient(270deg, rgb(49, 3, 3), rgb(5, 0, 31));
+	background: rgb(167, 35, 35);
 
 	font-size: large;
 	font-weight: bold;
-	letter-spacing: 1px;
 }
 
 button:hover {
-	background: linear-gradient(270deg, rgb(49, 35, 3), rgb(0, 32, 31));
+	background: rgb(110, 15, 15);
 }

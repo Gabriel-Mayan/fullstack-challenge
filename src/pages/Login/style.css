@@ -3,14 +3,14 @@
 	background-repeat: no-repeat;
 	background-image: url('https://img.freepik.com/vetores-gratis/despertador-tempo-desenho-desenho-de-ilustracao-vetorial_24877-21513.jpg');
 
-	height: 100vh;
+	height: 88vh;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-form {
+.form-login {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -22,26 +22,35 @@ form {
 	padding: 50px;
 
 	backdrop-filter: blur(3px);
-	background-color: rgb(128, 0, 0, 0.6);
+	background-color: rgba(154, 21, 21, 0.75);
 
 	border-radius: 40px;
 	box-shadow: 0 0 20px black;
-}
-
-input {
-	width: 100%;
-	padding: 12px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: content-box;
 }
 
 .campo {
 	margin: 10px 0;
 	font-size: 18px;
 	font-family: 'Ubuntu', sans-serif;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: content-box;
 }
 
 .btn {
-	margin-bottom: 20px;
+	margin-block: 20px;
+	background-color: rgb(81, 0, 0);
+}
+
+.text,
+.login-text {
+	margin-bottom: 30px;
+	font-weight: bold;
+}
+
+.text {
+	font-size: 16px;
+	margin-top: 10px;
 }

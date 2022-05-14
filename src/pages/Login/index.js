@@ -36,12 +36,12 @@ export function Login() {
 
 	return (
 		<div className='background'>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<h1>Login</h1>
+			<form className='form-login' onSubmit={handleSubmit(onSubmit)}>
+				<h1 className='login-text'>Login</h1>
 				<input className='campo' type="text" placeholder="Email" {...register('email', { required: true })} />
 				<input className='campo' type="password" placeholder="Senha" {...register('password', { required: true })} />
-				<Button className='btn' type="submit" label='Entrar' />
-				<Links destination='/register' prefixLabel='Primeira vez aqui? ' label='Cadastre-se' />
+				<Button className='campo btn' type="submit" label='Entrar' />
+				<Links className='text' destination='/register' prefixLabel='Primeira vez aqui? ' label='Cadastre-se' />
 			</form>
 		</div>
 	);
