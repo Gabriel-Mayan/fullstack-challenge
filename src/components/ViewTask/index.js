@@ -29,10 +29,9 @@ export function TaskView() {
 			if (err.request)
 				console.log('error', err.request.response);
 		});
-	}, []);
+	});
 
 	const updateTask = async (id) => {
-		console.log(id, description, date, time)
 		const deadline = new Date((date + " " + time));
 		const configuration = { user, headers: { authorization: token } };
 
@@ -49,8 +48,9 @@ export function TaskView() {
 	}
 
 	const finalizeTask = async (id) => {
-		const configuration = { user, params: { id } };
-		api.post('/user/update_task', configuration).then(response => {
+		const configuration = { user, headers: { authorization: token } };
+
+		api.post(`/user/finalize_task/${id}`, {}, configuration).then(response => {
 			if (response.status !== 200)
 				console.log('Falha ao Atualizar a tarefa');
 
@@ -64,8 +64,8 @@ export function TaskView() {
 
 	return (
 		<div className='conteiner-lista-tarefas'>
-			<h1 className='chamada'>Lista de tarefas</h1>
-			<div className='div-categories'>
+			<h1 className='chamada-lista-tarefas'>Lista de tarefas</h1>
+			<div className='div-lista-categories'>
 				<p className='text'>Descrição</p>
 				<p className='text'>Data de conclusão:</p>
 				<p className='text'>Hora de Conclusão:</p>
@@ -77,8 +77,8 @@ export function TaskView() {
 					<input className='date-task' type="date" min={now} defaultValue={task.deadline.date} onChange={(value) => setDate(value.target.value)} />
 					<input className='time-task' type="time" defaultValue={task.deadline.hours} onChange={(value) => setTime(value.target.value)} />
 					<p className='status-task'>{task.deadline.status}</p>
-					<Button className='btn-task' type="submit" label='Atualizar Tarefa' onClick={handleSubmit(updateTask(task.id))} />
-					<Button className='btn-task' type="submit" label='Finalizar Tarefa' onPress={handleSubmit(finalizeTask(task.id))} />
+					<Button className='btn-task' type="submit" label='Atualizar Tarefa' onClick={handleSubmit(() => updateTask(task.id))} />
+					<Button className='btn-task' type="submit" label='Finalizar Tarefa' onClick={handleSubmit(() => finalizeTask(task.id))} />
 				</div>
 			)) :
 				<div className='container-not-found'>

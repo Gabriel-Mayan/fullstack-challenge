@@ -1,9 +1,9 @@
-.background {
+.background-login {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-image: url('https://img.freepik.com/vetores-gratis/despertador-tempo-desenho-desenho-de-ilustracao-vetorial_24877-21513.jpg');
 
-	height: 88vh;
+	height: 100vh;
 
 	display: flex;
 	align-items: center;
@@ -34,7 +34,7 @@
 	font-family: 'Ubuntu', sans-serif;
 	width: 100%;
 	padding: 10px;
-	border: 1px solid #ccc;
+	border: 1px solid rgb(81, 0, 0);
 	border-radius: 4px;
 	box-sizing: content-box;
 }
@@ -44,13 +44,13 @@
 	background-color: rgb(81, 0, 0);
 }
 
-.text,
-.login-text {
+.text-login,
+.login-title {
 	margin-bottom: 30px;
 	font-weight: bold;
 }
 
-.text {
+.text-login {
 	font-size: 16px;
 	margin-top: 10px;
 }

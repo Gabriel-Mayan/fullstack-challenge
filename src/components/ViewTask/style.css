@@ -2,8 +2,8 @@
 	width: 80%;
 	min-height: 65%;
 
-	padding: 10px 10px 40px 10px;
 	margin-block: 40px;
+	padding: 10px 10px 40px 10px;
 
 	backdrop-filter: blur(3px);
 	background-color: rgba(200, 50, 50, 0.5);
@@ -17,20 +17,20 @@
 	overflow: visible;
 }
 
-.text {
-	font-size: 12px;
-	color: rgba(255, 235, 235, 0.651);
-}
-
-.chamada {
+.chamada-lista-tarefas {
 	align-self: center;
 }
 
-.div-categories {
+.div-lista-categories {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-evenly;
+}
+
+.text {
+	font-size: 12px;
+	color: rgba(255, 235, 235, 0.651);
 }
 
 .lista-tarefas {

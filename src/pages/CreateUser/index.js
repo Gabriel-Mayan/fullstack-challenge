@@ -17,8 +17,7 @@ export function CreateUser() {
 			if (response.status !== 200)
 				console.log('Falha ao efetuar o cadastro');
 
-			//TODO colocar uma notificação de sucesso de cadastro
-
+			console.log('Cadastro concluído com sucesso!');
 			navigate('/login')
 		}).catch(err => {
 			if (err.request)
@@ -27,14 +26,14 @@ export function CreateUser() {
 	}
 
 	return (
-		<div className='background'>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<h1>Cadastro</h1>
+		<div className='background-register'>
+			<form className='form-register' onSubmit={handleSubmit(onSubmit)}>
+				<h1 className='register-title'>Cadastre-se</h1>
 				<input className='campo' type="text" placeholder="Email" {...register('email', { required: true })} />
 				<input className='campo' type="password" placeholder="Senha" {...register('password', { required: true })} />
 				<input className='campo' type="password" placeholder="Confime a Senha" {...register('confimPassword', { required: true })} />
-				<Button className='btn' type="submit" label='Cadastrar' />
-				<Links destination='/login' prefixLabel='Já possui uma conta? ' label='Login' />
+				<Button className='campo btn' type="submit" label='Cadastrar' />
+				<Links className='text-register' destination='/login' prefixLabel='Já possui uma conta? ' label='Login' />
 			</form>
 		</div>
 	);
