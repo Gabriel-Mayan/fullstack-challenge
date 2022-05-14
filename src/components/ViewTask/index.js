@@ -12,32 +12,34 @@ import Button from '../../components/Generic/Button';
 export function ViewTask() {
 	const now = new Date();
 	const { handleSubmit } = useForm();
-	const [date, setDate] = useState('');
-	const [time, setTime] = useState('');
+	const [date, setDate] = useState();
+	const [hours, setHours] = useState();
 	const [tasks, setTasks] = useState([]);
-	const [description, setDescription] = useState('');
-
+	const [description, setDescription] = useState();
 	const { userStore: { token, user } } = useStores();
+
 	useEffect(() => {
 		const configuration = { user, headers: { authorization: token } };
 
 		api.get('/user/list_task', configuration).then(response => {
-			if (response.status !== 200)
+			const { data, status } = response;
+
+			if (status !== 200)
 				notify('error', 'Falha ao trazer as tarefas');
 
-			setTasks(response.data);
+			setTasks(data);
 		}).catch(err => {
 			if (err.request)
 				notify('error', err.request.response);
 		});
 	});
 
-	const updateTask = async (id) => {
-		const deadline = new Date((date + " " + time));
+
+	const updateTask = async (id, description, date, hours) => {
+		const deadline = new Date((date + " " + hours));
 		const configuration = { user, headers: { authorization: token } };
 
 		api.post(`/user/update_task/${id}`, { description, deadline }, configuration).then(response => {
-			console.log(response)
 			if (response.status !== 200)
 				notify('error', 'Falha ao atualizar a tarefa');
 
@@ -65,22 +67,22 @@ export function ViewTask() {
 	return (
 		tasks.length ?
 			< div className='conteiner-lista-tarefas' >
-				<h1 className='chamada-lista-tarefas'>Lista de tarefas:</h1>
+				<h1 className='chamada-lista-tarefas'>Suas Tarefas:</h1>
 				{
 					tasks.map((task) => (
 						<div className='form-lista-tarefas' key={task.id}>
 							<p className='text-lista'>Descrição da Tarefa:</p>
 							<p className='text-lista'>Data de conclusão:</p>
 							<p className='text-lista'>Hora de Conclusão:</p>
+							<p className='text-lista'>Status:</p>
 							<p className='text-lista'>Ação 01:</p>
 							<p className='text-lista'>Ação 02:</p>
-							<p className='text-lista'>Status:</p>
-							<input className='description-task' type="text" placeholder="O que temos pra hoje?" defaultValue={task.description} onChange={(value) => setDescription(value)} />
-							<input className='date-task' type="date" min={now} defaultValue={task.deadline.date} onChange={(value) => setDate(value.target.value)} />
-							<input className='time-task' type="time" defaultValue={task.deadline.hours} onChange={(value) => setTime(value.target.value)} />
-							<Button className='btn-list-task' type="submit" label='Atualizar Tarefa' onClick={handleSubmit(() => updateTask(task.id))} />
-							<Button className='btn-list-task' type="submit" label='Finalizar Tarefa' onClick={handleSubmit(() => finalizeTask(task.id))} />
+							<input className='description-task' type="text" placeholder="O que temos pra hoje?" defaultValue={task.description} onChange={e => setDescription(e.target.value)} />
+							<input className='date-task' type="date" min={now} defaultValue={task.deadline.date} onChange={e => setDate(e.target.value)} />
+							<input className='time-task' type="time" defaultValue={task.deadline.hours} onChange={e => setHours(e.target.value)} />
 							<p className='status-task'>{task.deadline.status}</p>
+							<Button className='btn-list-task' type="submit" label='Atualizar Tarefa' onClick={handleSubmit(() => updateTask(task.id, (description ? description : task.description), (date ? date : task.deadline.date), (hours ? hours : task.deadline.hours)))} />
+							<Button className='btn-list-task' type="submit" label='Finalizar Tarefa' onClick={handleSubmit(() => finalizeTask(task.id))} />
 						</div>
 					))
 				}

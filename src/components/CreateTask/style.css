@@ -1,8 +1,7 @@
 .conteiner-create-tarefas {
 	width: 80vw;
-	height: 20vh;
 
-	padding: 0.8rem;
+	padding: 1rem;
 	margin-block: 2rem;
 
 	backdrop-filter: blur(3px);
@@ -27,7 +26,7 @@
 	align-items: stretch;
 	justify-content: space-around;
 
-	gap: 1rem;
+	gap: 0.3rem;
 }
 
 .text {

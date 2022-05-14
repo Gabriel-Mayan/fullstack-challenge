@@ -29,7 +29,7 @@ export function CreateTask() {
 
 	return (
 		<div className='conteiner-create-tarefas'>
-			<h1 className='chamada-create-tarefas'>Crie aqui sua tarefa: </h1>
+			<h1 className='chamada-create-tarefas'>Crie aqui uma tarefa: </h1>
 			<form className='form-tarefas' onSubmit={handleSubmit(onSubmit)}>
 				<p className='text'>Descrição da Tarefa:</p>
 				<p className='text'>Data de conclusão:</p>

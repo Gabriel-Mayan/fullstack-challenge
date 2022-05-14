@@ -1,8 +1,7 @@
 .conteiner-lista-tarefas {
 	width: 80vw;
-	min-height: 65vh;
 
-	padding: 0.8rem;
+	padding: 1rem;
 	margin-bottom: 2rem;
 
 	backdrop-filter: blur(3px);
@@ -26,8 +25,8 @@
 	display: grid;
 	align-items: stretch;
 
-	gap: 0.5rem;
-	margin-block: 1rem;
+	gap: 0.3rem;
+	margin-top: 1rem;
 }
 
 .text-lista {
