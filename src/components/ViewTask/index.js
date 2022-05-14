@@ -9,7 +9,7 @@ import notify from '../../utils/notify';
 
 import Button from '../../components/Generic/Button';
 
-export function TaskView() {
+export function ViewTask() {
 	const now = new Date();
 	const { handleSubmit } = useForm();
 	const [date, setDate] = useState('');
@@ -63,29 +63,27 @@ export function TaskView() {
 	}
 
 	return (
-		<div className='conteiner-lista-tarefas'>
-			<h1 className='chamada-lista-tarefas'>Lista de tarefas</h1>
-			<div className='div-lista-categories'>
-				<p className='text'>Descrição</p>
-				<p className='text'>Data de conclusão:</p>
-				<p className='text'>Hora de Conclusão:</p>
-				<p className='text'>Status</p>
-			</div>
-			{tasks.length ? tasks.map((task) => (
-				<div className='lista-tarefas' key={task.id}>
-					<input className='description-task' type="text" placeholder="O que temos pra hoje?" defaultValue={task.description} onChange={(value) => setDescription(value)} />
-					<input className='date-task' type="date" min={now} defaultValue={task.deadline.date} onChange={(value) => setDate(value.target.value)} />
-					<input className='time-task' type="time" defaultValue={task.deadline.hours} onChange={(value) => setTime(value.target.value)} />
-					<p className='status-task'>{task.deadline.status}</p>
-					<Button className='btn-task' type="submit" label='Atualizar Tarefa' onClick={handleSubmit(() => updateTask(task.id))} />
-					<Button className='btn-task' type="submit" label='Finalizar Tarefa' onClick={handleSubmit(() => finalizeTask(task.id))} />
-				</div>
-			)) :
-				<div className='container-not-found'>
-					<p className='status-not-found'>Ops!</p>
-					<p className='msg-not-found'>Não existem tarefas cadastradas</p>
-				</div>
-			}
-		</div >
-	)
+		tasks.length ?
+			< div className='conteiner-lista-tarefas' >
+				<h1 className='chamada-lista-tarefas'>Lista de tarefas:</h1>
+				{
+					tasks.map((task) => (
+						<div className='form-lista-tarefas' key={task.id}>
+							<p className='text-lista'>Descrição da Tarefa:</p>
+							<p className='text-lista'>Data de conclusão:</p>
+							<p className='text-lista'>Hora de Conclusão:</p>
+							<p className='text-lista'>Ação 01:</p>
+							<p className='text-lista'>Ação 02:</p>
+							<p className='text-lista'>Status:</p>
+							<input className='description-task' type="text" placeholder="O que temos pra hoje?" defaultValue={task.description} onChange={(value) => setDescription(value)} />
+							<input className='date-task' type="date" min={now} defaultValue={task.deadline.date} onChange={(value) => setDate(value.target.value)} />
+							<input className='time-task' type="time" defaultValue={task.deadline.hours} onChange={(value) => setTime(value.target.value)} />
+							<Button className='btn-list-task' type="submit" label='Atualizar Tarefa' onClick={handleSubmit(() => updateTask(task.id))} />
+							<Button className='btn-list-task' type="submit" label='Finalizar Tarefa' onClick={handleSubmit(() => finalizeTask(task.id))} />
+							<p className='status-task'>{task.deadline.status}</p>
+						</div>
+					))
+				}
+			</div > : <></>
+	);
 }

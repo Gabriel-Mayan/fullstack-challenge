@@ -1,52 +1,70 @@
 .conteiner-create-tarefas {
-	width: 80%;
-	height: 18%;
+	width: 80vw;
+	height: 20vh;
 
-	margin-block: 20px;
-	padding: 10px 10px 40px 10px;
+	padding: 0.8rem;
+	margin-block: 2rem;
 
 	backdrop-filter: blur(3px);
 	background-color: rgba(200, 50, 50, 0.5);
 
-	border-radius: 20px;
-	box-shadow: 0 0 20px black;
+	border-radius: 1rem;
+	box-shadow: 0 0 2rem black;
 
 	display: flex;
 	flex-direction: column;
+
+	overflow: visible;
 }
 
 .chamada-create-tarefas {
 	align-self: center;
-}
-
-.div-create-categories {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-evenly;
-}
-
-.text {
-	font-size: 12px;
-	color: rgba(255, 235, 235, 0.651);
+	justify-self: center;
 }
 
 .form-tarefas {
-	display: flex;
-	flex-direction: row;
-
+	display: grid;
 	align-items: stretch;
 	justify-content: space-around;
 
-	margin-block: 10px;
+	gap: 1rem;
+}
+
+.text {
+	align-self: center;
+	justify-self: center;
+	grid-row-start: 2;
+	font-size: 0.9rem;
+	color: rgba(255, 235, 235, 0.651);
 }
 
 .description {
-	width: 400px;
+	width: 40rem;
+	grid-row-start: 3;
+	grid-column-start: 1;
+}
+
+.date {
+	grid-row-start: 3;
+	grid-column-start: 2;
+}
+
+.time {
+	grid-row-start: 3;
+	grid-column-start: 3;
+}
+
+.description,
+.date,
+.time {
+	padding: 0.2rem;
+	border-radius: 0.5rem;
 }
 
 .btn-task {
-	font-size: 12px;
-	padding: 15px 20px;
+	font-size: 0.75rem;
+	padding: 1.5rem 2rem;
 	color: aliceblue;
+	grid-row-start: 3;
+	grid-column-start: 4;
 }

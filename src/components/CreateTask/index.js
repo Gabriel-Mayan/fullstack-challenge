@@ -30,12 +30,11 @@ export function CreateTask() {
 	return (
 		<div className='conteiner-create-tarefas'>
 			<h1 className='chamada-create-tarefas'>Crie aqui sua tarefa: </h1>
-			<div className='div-create-categories'>
+			<form className='form-tarefas' onSubmit={handleSubmit(onSubmit)}>
 				<p className='text'>Descrição da Tarefa:</p>
 				<p className='text'>Data de conclusão:</p>
 				<p className='text'>Hora de Conclusão:</p>
-			</div>
-			<form className='form-tarefas' onSubmit={handleSubmit(onSubmit)}>
+				<p className='text'>Ações:</p>
 				<input className='description' type="text" placeholder="O que temos pra hoje?" {...register('description', { required: true })} />
 				<input className='date' type="date" min={now} {...register('date', { required: true })} />
 				<input className='time' type="time" {...register('time', { required: true })} />
