@@ -6,9 +6,10 @@ import { useNavigate } from 'react-router-dom';
 import Links from '../../components/Generic/Links';
 import Button from '../../components/Generic/Button';
 
-import { useStores } from '../../stores';
-
 import api from '../../services/api';
+import notify from '../../utils/notify';
+
+import { useStores } from '../../stores';
 
 export function Login() {
 	const { register, handleSubmit } = useForm();
@@ -19,7 +20,7 @@ export function Login() {
 	const onSubmit = async ({ email, password }) => {
 		api.post('/login', { email, password }).then(response => {
 			if (response.status !== 200)
-				console.log('Falha ao efetuar o login');
+				notify('error', 'Falha ao efetuar login');
 
 			const { data: { token, user } } = response;
 
@@ -30,7 +31,7 @@ export function Login() {
 			navigate(`/${route}`);
 		}).catch(err => {
 			if (err.request)
-				console.log('error', err.request.response);
+				notify('error', err.request.response);
 		});
 	}
 

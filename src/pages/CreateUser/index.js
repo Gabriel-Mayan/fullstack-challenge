@@ -7,6 +7,7 @@ import Links from '../../components/Generic/Links';
 import Button from '../../components/Generic/Button';
 
 import api from '../../services/api';
+import notify from '../../utils/notify';
 
 export function CreateUser() {
 	const { register, handleSubmit } = useForm();
@@ -15,13 +16,13 @@ export function CreateUser() {
 	const onSubmit = ({ email, password, confimPassword, }) => {
 		api.post('/create_user', { email, password, confimPassword, }).then(response => {
 			if (response.status !== 200)
-				console.log('Falha ao efetuar o cadastro');
+				notify('error', 'Falha ao efetuar o cadastro');
 
-			console.log('Cadastro concluído com sucesso!');
+			notify('success', 'Cadastro concluído com sucesso!');
 			navigate('/login')
 		}).catch(err => {
 			if (err.request)
-				console.log('error', err.request.response);
+				notify('error', err.request.response);
 		});
 	}
 

@@ -1,10 +1,12 @@
 import './style.css';
-import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useState, useEffect } from 'react';
 
 import { useStores } from '../../stores';
 
 import api from '../../services/api';
+import notify from '../../utils/notify';
+
 import Button from '../../components/Generic/Button';
 
 export function TaskView() {
@@ -16,18 +18,17 @@ export function TaskView() {
 	const [description, setDescription] = useState('');
 
 	const { userStore: { token, user } } = useStores();
-
 	useEffect(() => {
 		const configuration = { user, headers: { authorization: token } };
 
 		api.get('/user/list_task', configuration).then(response => {
 			if (response.status !== 200)
-				console.log('Falha ao trazer as tarefas');
+				notify('error', 'Falha ao trazer as tarefas');
 
 			setTasks(response.data);
 		}).catch(err => {
 			if (err.request)
-				console.log('error', err.request.response);
+				notify('error', err.request.response);
 		});
 	});
 
@@ -38,12 +39,12 @@ export function TaskView() {
 		api.post(`/user/update_task/${id}`, { description, deadline }, configuration).then(response => {
 			console.log(response)
 			if (response.status !== 200)
-				console.log('Falha ao Atualizar a tarefa');
+				notify('error', 'Falha ao atualizar a tarefa');
 
-			console.log('Tarefa atualizada com sucesso!');
+			notify('success', 'Tarefa atualizada com sucesso!');
 		}).catch(err => {
 			if (err.request)
-				console.log('error', err.request.response);
+				notify('error', err.request.response);
 		});
 	}
 
@@ -52,15 +53,14 @@ export function TaskView() {
 
 		api.post(`/user/finalize_task/${id}`, {}, configuration).then(response => {
 			if (response.status !== 200)
-				console.log('Falha ao Atualizar a tarefa');
+				notify('error', 'Falha ao finalizar a tarefa');
 
-			console.log('Tarefa atualizada com sucesso!');
+			notify('success', 'Tarefa finalizada com sucesso!');
 		}).catch(err => {
 			if (err.request)
-				console.log('error', err.request.response);
+				notify('error', err.request.response);
 		});
 	}
-
 
 	return (
 		<div className='conteiner-lista-tarefas'>

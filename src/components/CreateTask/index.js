@@ -2,6 +2,7 @@ import './style.css';
 
 import api from '../../services/api';
 import Button from '../../components/Generic/Button';
+import notify from '../../utils/notify';
 
 import { useForm } from 'react-hook-form';
 import { useStores } from '../../stores';
@@ -17,12 +18,12 @@ export function CreateTask() {
 
 		api.post('/user/create_task', { description, deadline }, configuration).then(response => {
 			if (response.status !== 200)
-				console.log('Falha ao Criar a tarefa');
+				notify('error', 'Falha ao Criar a tarefa');
 
-			console.log('Tarefa concluída com sucesso!');
+			notify('success', 'Tarefa criada com sucesso!');
 		}).catch(err => {
 			if (err.request)
-				console.log('error', err.request.response);
+				notify('error', err.request.response);
 		});
 	}
 
