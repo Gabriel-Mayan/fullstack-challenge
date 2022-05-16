@@ -11,7 +11,7 @@ export function AdminPage() {
 
 	const [page, setPage] = useState(1);
 	const [tasks, setTasks] = useState([]);
-	const [pageSize, setPageSize] = useState(20);
+	const [pageSize, setPageSize] = useState(10);
 	const [filterOverdue, setFilterOverdue] = useState(false);
 
 	useEffect(() => {
@@ -30,6 +30,18 @@ export function AdminPage() {
 		});
 	});
 
+	const changeFilters = (filter) => {
+		setFilterOverdue(filter);
+	}
+
+	const changePage = (filter) => {
+		setPage(filter);
+	}
+
+	const changePageSize = (filter) => {
+		setPageSize(filter);
+	}
+
 	return (
 		tasks.length ?
 			< div className='container-admin-page' >
@@ -45,6 +57,24 @@ export function AdminPage() {
 						</div>
 					))
 				}
+				<div className='div-container-options'>
+					<div className='div-options'>
+						<p className='name-filters'>Tamanho da lista: </p>
+						<select className='change-filters' onChange={(event) => changePageSize(event.target.value)}>
+							<option value='10'> 10</option>
+							<option value='20'> 20</option>
+							<option value='50'> 50</option>
+							<option value='100'> 100</option>
+						</select>
+					</div>
+					<div className='div-options'>
+						<p className='name-filters'>Filtros: </p>
+						<select className='change-filters' onChange={(event) => changeFilters(event.target.value)}>
+							<option value='false'> Todas as Tarefas</option>
+							<option value='true'> Tarefas Atrasadas</option>
+						</select>
+					</div>
+				</div>
 			</div > : <div className='message-no-tasks'>Ops... Parece que não existem tarefas cadastradas...</div>
 	);
 }

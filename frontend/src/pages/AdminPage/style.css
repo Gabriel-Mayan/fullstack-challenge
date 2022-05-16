@@ -38,7 +38,8 @@
 .description-task-adm,
 .email-task-adm,
 .date-task-adm,
-.time-task-adm {
+.time-task-adm,
+.change-filters {
 	padding: 0.2rem;
 	border-radius: 0.5rem;
 }
@@ -57,4 +58,18 @@
 	font-weight: bold;
 	display: inline-block;
 	margin-block: 10px;
+}
+
+.div-container-options {
+	display: flex;
+	margin-top: 1rem;
+	justify-content: space-between;
+
+}
+
+.div-options {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
 }

@@ -71,12 +71,6 @@ export function ViewTask() {
 				{
 					tasks.map((task) => (
 						<div className='form-lista-tarefas' key={task.id}>
-							<p className='text-lista'>Descrição da Tarefa:</p>
-							<p className='text-lista'>Data de conclusão:</p>
-							<p className='text-lista'>Hora de Conclusão:</p>
-							<p className='text-lista'>Status:</p>
-							<p className='text-lista'>Ação 01:</p>
-							<p className='text-lista'>Ação 02:</p>
 							<input
 								className='description-task'
 								type="text"
