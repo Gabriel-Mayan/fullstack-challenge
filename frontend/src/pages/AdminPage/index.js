@@ -31,19 +31,20 @@ export function AdminPage() {
 	});
 
 	return (
-		<div className='container-admin-page'>
-			{tasks.length ?
-				tasks.map((task) => (
-					<div className='form-lista-tarefas-adm' key={task.id}>
-						<input disabled className='email-task-adm' value={task.email} />
-						<input disabled className='description-task-adm' value={task.description} />
-						<input disabled className='date-task-adm' value={task.deadline.date} />
-						<input disabled className='time-task-adm' type="time" value={task.deadline.hours} />
-						<p className='status-task-adm'>{task.deadline.status}</p>
-					</div>
-				))
-				: <div className='message-no-tasks'>Ops... Parece que não existem tarefas cadastradas...</div>
-			}
-		</div>
+		tasks.length ?
+			< div className='container-admin-page' >
+				<h1 className='chamada-lista-admin'>Tarefas Cadastradas:</h1>
+				{
+					tasks.map((task) => (
+						<div className='form-lista-tarefas-adm' key={task.id}>
+							<input disabled className='email-task-adm' value={task.email} />
+							<input disabled className='description-task-adm' value={task.description} />
+							<input disabled className='date-task-adm' value={task.deadline.date} />
+							<input disabled className='time-task-adm' type="time" value={task.deadline.hours} />
+							<p className='status-task-adm'>{task.deadline.status}</p>
+						</div>
+					))
+				}
+			</div > : <div className='message-no-tasks'>Ops... Parece que não existem tarefas cadastradas...</div>
 	);
 }

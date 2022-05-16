@@ -1,0 +1,60 @@
+.container-admin-page {
+	width: 80vw;
+
+	padding: 1rem;
+	margin-block: 2rem;
+
+	backdrop-filter: blur(3px);
+	background-color: rgba(200, 50, 50, 0.5);
+
+	border-radius: 1rem;
+	box-shadow: 0 0 2rem black;
+
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+
+	overflow: visible;
+}
+
+.chamada-lista-admin {
+	align-self: center;
+	justify-self: center;
+}
+
+.form-lista-tarefas-adm {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+
+	gap: 0.3rem;
+	margin-top: 1rem;
+}
+
+.description-task-adm {
+	width: 30rem;
+}
+
+.description-task-adm,
+.email-task-adm,
+.date-task-adm,
+.time-task-adm {
+	padding: 0.2rem;
+	border-radius: 0.5rem;
+}
+
+.status-task-adm {
+
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: green;
+	align-self: center;
+	text-align: center;
+}
+
+.message-no-tasks {
+	font-size: 40px;
+	font-weight: bold;
+	display: inline-block;
+	margin-block: 10px;
+}
