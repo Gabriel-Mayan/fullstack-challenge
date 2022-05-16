@@ -3,7 +3,6 @@ import './style.css';
 import { useNavigate } from 'react-router-dom';
 
 import Logo from '../../assets/logo.svg';
-
 import IWhatsapp from '../../assets/icon_whatsapp.svg';
 import IFacebook from '../../assets/icon_facebook.svg';
 import IInstagram from '../../assets/icon_instagram.svg';

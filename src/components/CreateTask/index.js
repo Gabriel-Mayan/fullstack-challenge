@@ -1,11 +1,12 @@
 import './style.css';
 
 import api from '../../services/api';
-import Button from '../../components/Generic/Button';
-import notify from '../../utils/notify';
+import notify from '../../services/notify';
 
 import { useForm } from 'react-hook-form';
 import { useStores } from '../../stores';
+
+import Button from '../../components/Generic/Button';
 
 export function CreateTask() {
 	const now = new Date();

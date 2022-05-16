@@ -1,0 +1,28 @@
+.container-admin-page {
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+	justify-content: center;
+}
+
+.form-lista-tarefas-adm {}
+
+.email-task-adm {}
+
+.description-task-adm {}
+
+.date-task-adm {}
+
+.time-task-adm {}
+
+.status-task-adm {}
+
+.message-no-tasks {
+	font-size: 40px;
+	font-weight: bold;
+	display: inline-block;
+	margin-block: 10px;
+}

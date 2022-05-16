@@ -2,10 +2,10 @@ import './style.css';
 import { useForm } from 'react-hook-form';
 import { useState, useEffect } from 'react';
 
-import { useStores } from '../../stores';
-
 import api from '../../services/api';
-import notify from '../../utils/notify';
+import notify from '../../services/notify';
+
+import { useStores } from '../../stores';
 
 import Button from '../../components/Generic/Button';
 
@@ -77,12 +77,46 @@ export function ViewTask() {
 							<p className='text-lista'>Status:</p>
 							<p className='text-lista'>Ação 01:</p>
 							<p className='text-lista'>Ação 02:</p>
-							<input className='description-task' type="text" placeholder="O que temos pra hoje?" defaultValue={task.description} onChange={e => setDescription(e.target.value)} />
-							<input className='date-task' type="date" min={now} defaultValue={task.deadline.date} onChange={e => setDate(e.target.value)} />
-							<input className='time-task' type="time" defaultValue={task.deadline.hours} onChange={e => setHours(e.target.value)} />
+							<input
+								className='description-task'
+								type="text"
+								placeholder="O que temos pra hoje?"
+								defaultValue={task.description}
+								onChange={e => setDescription(e.target.value)}
+							/>
+							<input
+								className='date-task'
+								type="date" min={now}
+								defaultValue={task.deadline.date}
+								onChange={e =>
+									setDate(e.target.value)}
+							/>
+							<input
+								className='time-task'
+								type="time"
+								defaultValue={task.deadline.hours}
+								onChange={e => setHours(e.target.value)}
+							/>
 							<p className='status-task'>{task.deadline.status}</p>
-							<Button className='btn-list-task' type="submit" label='Atualizar Tarefa' onClick={handleSubmit(() => updateTask(task.id, (description ? description : task.description), (date ? date : task.deadline.date), (hours ? hours : task.deadline.hours)))} />
-							<Button className='btn-list-task' type="submit" label='Finalizar Tarefa' onClick={handleSubmit(() => finalizeTask(task.id))} />
+							<Button
+								type="submit"
+								label='Atualizar Tarefa'
+								className='btn-list-task'
+								onClick={handleSubmit(() => {
+									updateTask(
+										task.id,
+										description ? description : task.description,
+										date ? date : task.deadline.date,
+										hours ? hours : task.deadline.hours
+									)
+								})}
+							/>
+							<Button
+								type="submit"
+								label='Finalizar Tarefa'
+								className='btn-list-task'
+								onClick={handleSubmit(() => finalizeTask(task.id))}
+							/>
 						</div>
 					))
 				}

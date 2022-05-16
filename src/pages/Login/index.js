@@ -7,7 +7,7 @@ import Links from '../../components/Generic/Links';
 import Button from '../../components/Generic/Button';
 
 import api from '../../services/api';
-import notify from '../../utils/notify';
+import notify from '../../services/notify';
 
 import { useStores } from '../../stores';
 
